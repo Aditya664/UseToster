@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { NotificationService } from './services/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'UseToster';
+  constructor(private service:NotificationService){}
+
+  showSuccess(){
+    this.service.showSuccess();
+  }
+
+  showError(){
+    this.service.showError();
+  }
+
+ 
 }
